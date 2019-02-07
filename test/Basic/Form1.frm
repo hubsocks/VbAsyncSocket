@@ -449,7 +449,7 @@ Private Function pvParseUrl(sUrl As String, sProto As String, sHost As String, l
                 With .Item(0).SubMatches
                     sProto = .Item(0)
                     sHost = .Item(1)
-                    lPort = Val(.Item(2))
+                    lPort = Val(mid(.Item(2),2))
                     If lPort = 0 Then
                         Select Case LCase$(sProto)
                         Case "https"
